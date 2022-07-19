@@ -70,7 +70,7 @@ function go(grib2Url) {
   });
 }
 
-document.getElementById('header-title').innerHTML = vizDate + '&nbsp;3時の予報';
+document.getElementById('header-title').innerHTML = '世界可降水量マップ&nbsp;' + vizDate + '&nbsp;3時の予報';
 
 // var mocks = [
 //   'https://vt-cm01-stg.mapion.co.jp/lab/noaa/raw/pwat/20220718/18/006.grib2',
