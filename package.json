@@ -1,0 +1,22 @@
+{
+  "name": "world-precipitable-water-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "browserify main.js -o bundle.js",
+    "dev": "watchify main.js -v -o bundle.js & http-server --cors"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "http-server": "^14.1.1",
+    "watchify": "^4.0.0"
+  },
+  "dependencies": {
+    "grib2class": "^1.0.7",
+    "plotly.js-dist": "^1.53.0"
+  }
+}
