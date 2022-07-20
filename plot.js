@@ -2,7 +2,7 @@
 
 var Plotly = require("plotly.js-dist");
 
-module.exports = function interactivePlot(grid, div, call) {
+module.exports = function plot(grid, div, call) {
     call.before();
 
     var nx = grid.Nx;
