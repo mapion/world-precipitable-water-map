@@ -43,6 +43,9 @@ module.exports = function plot(grid, div, call) {
             [1.0, "rgb(180, 0, 104)"]
         ],
         colorbar: {
+            // title: '可降水量',
+            ticksuffix: 'kg/㎡',
+            showticksuffix: 'last',
             len: 0.5
         },
         opacity: 0.8,
