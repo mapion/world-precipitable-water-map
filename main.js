@@ -45,9 +45,20 @@ function getVizDate(targetDate) {
 }
 const vizDate = getVizDate(targetDate);
 
+const cache = {};
 function go(grib2Url) {
     enableLoading();
-    http.get(grib2Url, function (res, err) {
+    const plotting = function(buffer) {
+        myGrid.parse(buffer);
+        plot(myGrid, document.getElementById("plot"), beforeAfter);
+    }
+    if (cache[grib2Url]) {
+        setTimeout(function() {
+            plotting(cache[grib2Url]);
+        }, 0.0001);
+        return;
+    }
+    http.get(grib2Url, function(res, err) {
         if (err) {
             disableLoading();
             console.log(err);
@@ -58,8 +69,8 @@ function go(grib2Url) {
         });
         res.on("end", function () {
             const buffer = Buffer.concat(allChunks);
-            myGrid.parse(buffer);
-            plot(myGrid, document.getElementById("plot"), beforeAfter);
+            plotting(buffer);
+            cache[grib2Url] = buffer;
         });
     }).on("error", function (err) {
         console.log("Error: " + err.message);
