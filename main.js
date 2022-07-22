@@ -88,7 +88,7 @@ document.getElementById('header-title').innerHTML = '世界可降水量マップ
 // ];
 const mocks = [];
 for (let i = 6; i <= 168; i += 6) {
-    const zerop = ('00' + i).slice(-3);
+    const zerop = ('000' + i).slice(-3);
     const url = 'https://vt-cm01-stg.mapion.co.jp/lab/noaa/raw/pwat/' + targetDateFormatted + '/18/' + zerop + '.grib2';
     mocks.push({
         name: i + '時間後',
