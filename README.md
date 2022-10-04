@@ -6,7 +6,7 @@
 
 ```sh
 % npm i
-% npm run dev && http-server --cors
+% npm run dev
 % open localhost:8080
 ```
 
